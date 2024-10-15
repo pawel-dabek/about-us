@@ -1,0 +1,111 @@
+.about-us-block {
+  padding: 60px 0;
+
+  @media (max-width: 1280px) {
+    padding: 48px 0;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 36px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 24px 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @media (max-width: 767px) {
+      gap: 36px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+      gap: 24px;
+    }
+  }
+
+  &__content > * {
+    grid-column: span 1;
+  }
+
+  &__title {
+    font-size: var(--wp--preset--font-size--7-xl);
+    font-weight: 500;
+
+    @media (max-width: 1024px) {
+      font-size: var(--wp--preset--font-size--6-xl);
+    }
+
+    @media (max-width: 767px) {
+      font-size: var(--wp--preset--font-size--5-xl);
+    }
+  }
+
+  &__text {
+    font-size: var(--wp--preset--font-size--lg);
+    color: var(--wp--preset--color--black-400);
+    max-width: 538px;
+
+    @media (max-width: 767px) {
+      max-width: unset;
+    }
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 1320/550;
+    overflow: hidden;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+
+    @media (max-width: 1280px) {
+      border-top-left-radius: 64px;
+      border-bottom-right-radius: 64px;
+    }
+
+    @media (max-width: 1024px) {
+      border-top-left-radius: 43px;
+      border-bottom-right-radius: 43px;
+    }
+
+    @media (max-width: 767px) {
+      border-top-left-radius: 21px;
+      border-bottom-right-radius: 21px;
+      aspect-ratio: 350/250;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+    }
+
+    &::before {
+      background: rgba(236, 97, 42, 0.1);
+    }
+
+    &::after {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
